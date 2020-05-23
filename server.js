@@ -45,7 +45,7 @@ const database = {
     ]
 }
 
-app.get('/', (req, res) => { res.send(database.users)})<
+app.get('/', (req, res) => { res.send()})
 
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, db, bcrypt, saltRounds)});
 
@@ -58,6 +58,6 @@ app.post('/imageUrl', (req, res) => {image.handleApiCall(req, res)}),
 app.post('/register', (req, res) => {register.handleRegister(req, res, db, bcrypt, saltRounds)});
 
 
-app.listen(3000, () => {
-    console.log('app running on port 3000');
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`app running on port ${process.env.PORT}`);
 });

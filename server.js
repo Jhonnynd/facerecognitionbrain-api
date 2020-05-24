@@ -12,7 +12,7 @@ const image = require('./controllers/image');
 const db = knex({
     client: 'pg',
     connection: {
-        host: '127.0.0.1',
+        host: 'postgresql-shaped-89451',
         user: 'postgres',
         password: '123456',
         database: 'smart-brain'
@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const saltRounds = 10;
-
+ 
 
 app.get('/', (req, res) => { res.send('its working')})
 
